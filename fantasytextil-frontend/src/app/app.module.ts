@@ -9,12 +9,14 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
 import { CortadorComponent } from './pages/cortador/cortador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    CortadorComponent
+    CortadorComponent,
+    ClienteEdicionComponent
   ],
   imports: [
     BrowserModule,

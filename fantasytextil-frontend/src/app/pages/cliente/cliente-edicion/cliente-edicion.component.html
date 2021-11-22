@@ -1,0 +1,37 @@
+<!-- No olvidar agregar ReactiveFormsModule en App.module.ts, util para trabajar con formularios-->
+<form class="example-container" [formGroup]="form" #frmCliente="ngForm" (ngSubmit)="operar()">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">        
+        <input matInput placeholder="Razon Social" minlength="10" required formControlName="razonSocial">               
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Teléfono" required formControlName="telefono" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Direccion" required formControlName="direccion">
+    </mat-form-field>
+
+    
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" required formControlName="email" >
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmCliente.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/Cliente' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+
+</form>

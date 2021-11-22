@@ -9,7 +9,7 @@
 
         <span class="example-spacer"></span>
 
-        <button mat-icon-button [matMenuTriggerFor]="menuu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
         </button>
 
@@ -21,13 +21,6 @@
             <button mat-menu-item (click)="sidenav.opened = false" >
                 <mat-icon>exit_to_app</mat-icon>
                 <span>Cerrar Sesión</span>
-            </button>
-        </mat-menu>
-
-        <mat-menu #menuu="matMenu">
-            <button mat-menu-item routerLink="/perfil">
-                <mat-icon>account_box</mat-icon>
-                <span>Te Amo mi Niña Hermosa</span>
             </button>
         </mat-menu>
     </mat-toolbar>

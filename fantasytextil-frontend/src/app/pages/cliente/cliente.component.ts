@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ClienteComponent implements OnInit {
 
 
-  displayedColumns = ['idCliente', 'razonSocial', 'direccion', 'telefono', 'email'];
+  displayedColumns = ['idCliente', 'razonSocial', 'direccion', 'telefono', 'email', 'acciones'];
   dataSource!: MatTableDataSource<Cliente>;
 
   constructor(

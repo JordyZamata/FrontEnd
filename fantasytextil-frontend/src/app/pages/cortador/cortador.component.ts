@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { switchMap } from 'rxjs/operators';
 import { Cortador } from 'src/app/_model/cortador';
 import { CortadorService } from 'src/app/_service/cortador.service';
+import { CortadorDialogoComponent } from './cortador-dialogo/cortador-dialogo.component';
 
 @Component({
   selector: 'app-cortador',
@@ -57,7 +58,7 @@ export class CortadorComponent implements OnInit {
       this.cortadorService.setMensajeCambio('SE ELIMNO');
     });
   }
-/*
+
   abrirDialogo(cortador?: Cortador) {
     let med = cortador != null ? cortador : new Cortador();
     this.dialog.open(CortadorDialogoComponent, {
@@ -65,5 +66,5 @@ export class CortadorComponent implements OnInit {
       data: med
     });
   }
-*/
+
 }

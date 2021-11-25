@@ -10,13 +10,15 @@ import { CortadorComponent } from './pages/cortador/cortador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
+import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cortador-dialogo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
     CortadorComponent,
-    ClienteEdicionComponent
+    ClienteEdicionComponent,
+    CortadorDialogoComponent
   ],
   imports: [
     BrowserModule,

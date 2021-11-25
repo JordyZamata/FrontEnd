@@ -18,13 +18,13 @@
 
     <ng-container matColumnDef="nombres">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.nombre}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.nombres}} </mat-cell>
     </ng-container>
 
 
     <ng-container matColumnDef="apellidos">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.apellido}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.apellidos}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="telefono">
@@ -35,10 +35,9 @@
 
     <ng-container matColumnDef="acciones">
       <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
-      <mat-cell *matCellDef="let row">        
-        <button mat-button color="primary" (click)="abrirDialogo(row)" ><mat-icon>ballot</mat-icon></button>
-        <button mat-button color="primary"  ><mat-icon>ballot</mat-icon></button>
+      <mat-cell *matCellDef="let row">      
 
+        <button mat-button color="primary" (click)="abrirDialogo(row)" ><mat-icon>ballot</mat-icon></button>
         <button mat-button color="accent" (click)="eliminar(row)"><mat-icon>delete</mat-icon></button>
       </mat-cell>
     </ng-container>
@@ -54,7 +53,6 @@
 <br>
 
 <button mat-fab color="accent" (click)="abrirDialogo()" style="float: right; margin-right: 20px">
-<button mat-fab color="accent"  style="float: right; margin-right: 20px">
  
     <mat-icon>create</mat-icon>
 </button>

@@ -1,1 +1,17 @@
-<p>cortador-dialogo works!</p>
+<div>
+    <mat-form-field>
+        <input matInput placeholder="Nombres" [(ngModel)]="cortador.nombres">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Apellidos" [(ngModel)]="cortador.apellidos">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Telefono" [(ngModel)]="cortador.telefono" max="9" maxlength="9" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="foto" [(ngModel)]="cortador.fotoUrl">
+    </mat-form-field>
+    <img mat-card-image [src]="cortador.fotoUrl" alt="" width="50%" height="50%" *ngIf="cortador.fotoUrl != null">
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cerrar()">Cancelar</button>

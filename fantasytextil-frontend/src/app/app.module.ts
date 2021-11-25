@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { CortadorComponent } from './pages/cortador/cortador.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
 import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cortador-dialogo.component';
 
@@ -26,7 +26,8 @@ import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cort
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

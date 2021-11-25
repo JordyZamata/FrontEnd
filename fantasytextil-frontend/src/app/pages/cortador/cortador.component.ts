@@ -30,6 +30,7 @@ export class CortadorComponent implements OnInit {
 
   ngOnInit(): void {
     this.cortadorService.getCortadorCambio().subscribe(data => {
+      
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -60,10 +61,10 @@ export class CortadorComponent implements OnInit {
   }
 
   abrirDialogo(cortador?: Cortador) {
-    let med = cortador != null ? cortador : new Cortador();
+    let cor = cortador != null ? cortador : new Cortador();
     this.dialog.open(CortadorDialogoComponent, {
       width: '250px',
-      data: med
+      data: cor
     });
   }
 

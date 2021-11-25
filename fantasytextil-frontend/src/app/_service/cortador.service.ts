@@ -3,22 +3,23 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cortador } from '../_model/cortador';
+import { GenericService } from './generic.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CortadorService {
+export class CortadorService extends GenericService<Cortador>{
 
   private cortadorCambio = new Subject<Cortador[]>();
   private mensajeCambio = new Subject<string>();
 
   constructor(protected http: HttpClient) {
-    /*super(
+    super(
       http,
       `${environment.HOST}/cortadores`
-    );*/
+    );
   }
-
+  /*
   private url = `${environment.HOST}/cortadores`;
 
   listar(){
@@ -40,7 +41,7 @@ export class CortadorService {
   eliminar(id: number){
     return this.http.delete(`${this.url}/${id}`);
   }
-
+*/
   //** get set subjects */
 
   getCortadorCambio(){

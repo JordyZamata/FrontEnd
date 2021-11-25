@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
 import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cortador-dialogo.component';
+import { TelaComponent } from './pages/tela/tela.component';
+import { TelaEdicionComponent } from './pages/tela/tela-edicion/tela-edicion.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cort
     ClienteComponent,
     CortadorComponent,
     ClienteEdicionComponent,
-    CortadorDialogoComponent
+    CortadorDialogoComponent,
+    TelaComponent,
+    TelaEdicionComponent
   ],
   imports: [
     BrowserModule,

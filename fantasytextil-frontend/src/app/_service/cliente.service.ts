@@ -1,22 +1,28 @@
-import { Cliente } from '../_model/cliente';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Cliente } from '../_model/cliente';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
+import { GenericService } from './generic.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
-
-
+export class ClienteService extends GenericService<Cliente> {
 
   private clienteCambio = new Subject<Cliente[]>();
   private mensajeCambio = new Subject<string>();
 
-  private url = `${environment.HOST}/clientes`;
+  constructor(protected http: HttpClient) {
+    super(
+      http,
+      `${environment.HOST}/clientes`
+    );
+  }  
 
-  constructor(private http : HttpClient) { }
+  /* ANTES DEL GENERIC SERVICE
+
+  //private url = `${environment.HOST}/clientes`;
 
   listar(){
     return this.http.get<Cliente[]>(this.url);
@@ -26,17 +32,17 @@ export class ClienteService {
     return this.http.get<Cliente>(`${this.url}/${id}`);
   }
 
-  registrar(clientes : Cliente){
-    return this.http.post(this.url, clientes);
+  registrar(cliente : Cliente){
+    return this.http.post(this.url, cliente);
   }
 
-  modificar(clientes : Cliente){
-    return this.http.put(this.url, clientes);
+  modificar(cliente : Cliente){
+    return this.http.put(this.url, cliente);
   }
 
   eliminar(id: number){
     return this.http.delete(`${this.url}/${id}`);
-  }
+  }*/
 
   //** get set subjects */
 
@@ -55,4 +61,5 @@ export class ClienteService {
   setMensajeCambio(mensaje: string){
     return this.mensajeCambio.next(mensaje);
   }
+
 }

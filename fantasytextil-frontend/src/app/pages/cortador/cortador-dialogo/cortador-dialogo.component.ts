@@ -20,15 +20,13 @@ export class CortadorDialogoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data)
     this.cortador = new Cortador();
-    this.cortador = this.data;
     this.cortador.idCortador = this.data.idCortador;
     this.cortador.nombres = this.data.nombres;
     this.cortador.apellidos = this.data.apellidos;
     this.cortador.telefono = this.data.telefono;
     this.cortador.fotoUrl = this.data.fotoUrl;
-    this.cortador = this.data;
+
   }
 
   operar(){

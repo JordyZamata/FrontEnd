@@ -1,1 +1,30 @@
-<p>tela-edicion works!</p>
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmTela="ngForm">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Color" required formControlName="color">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Estilo" required formControlName="estilo">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Peso" required formControlName="peso" type="number">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmTela.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    
+    <button mat-raised-button color="accent" routerLink='/tela' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>

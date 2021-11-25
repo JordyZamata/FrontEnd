@@ -13,6 +13,8 @@ import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente
 import { CortadorDialogoComponent } from './pages/cortador/cortador-dialogo/cortador-dialogo.component';
 import { TelaComponent } from './pages/tela/tela.component';
 import { TelaEdicionComponent } from './pages/tela/tela-edicion/tela-edicion.component';
+import { CorteComponent } from './pages/corte/corte.component';
+import { CorteEdicionComponent } from './pages/corte/corte-edicion/corte-edicion.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TelaEdicionComponent } from './pages/tela/tela-edicion/tela-edicion.com
     ClienteEdicionComponent,
     CortadorDialogoComponent,
     TelaComponent,
-    TelaEdicionComponent
+    TelaEdicionComponent,
+    CorteComponent,
+    CorteEdicionComponent
   ],
   imports: [
     BrowserModule,

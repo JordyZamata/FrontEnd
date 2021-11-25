@@ -3,4 +3,4 @@ export class Tela {
     color!: string;
     estilo!: string;
     peso!: number;
-  }
+}

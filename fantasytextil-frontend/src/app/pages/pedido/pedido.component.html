@@ -27,6 +27,65 @@
         <mat-datepicker #picker></mat-datepicker>
 
     </mat-form-field>
+
+    
+    <!-- Editable table -->
+    <div class="card">
+        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+        <div class="card-body">
+        
+        <div id="table" class="table-editable">
+            <span class="table-add float-right mb-3 mr-2">
+            <a class="text-success" (click)="add()">
+                <button>agregar</button>
+            <!-- <mdb-icon fas icon="plus" size="2x"></mdb-icon>-->
+            </a>
+            </span>
+            <table aria-disabled="true" style="width: 80%;">
+            <tr>
+                <th class="text-center">IdCorte</th>
+                <th class="text-center">tallaS</th>
+                <th class="text-center">tallaM</th>
+                <th class="text-center">tallaL</th>
+                <th class="text-center">tallaXS</th>
+                <th class="text-center">talla1X</th>
+                <th class="text-center">talla2X</th>
+            </tr>
+            <tr *ngFor="let person of personList; let id = index">
+                <td>
+                <span (keyup)="changeValue(id, 'corte', $event)" (blur)="updateList(id, 'corte', $event)" contenteditable="true">{{person.corte}}</span>
+                </td>
+                <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'tallaS', $event)" (blur)="updateList(id, 'tallaS', $event)">{{person.tallaS}}</span>
+                </td>
+                <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'tallaM', $event)" (blur)="updateList(id, 'tallaM', $event)">{{person.tallaM}}</span>
+                </td>
+                <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'tallaL', $event)" (blur)="updateList(id, 'tallaL', $event)">{{person.tallaL}}</span>
+                </td>
+                <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'tallaXS', $event)" (blur)="updateList(id, 'tallaXS', $event)">{{person.tallaXS}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'talla1X', $event)" (blur)="updateList(id, 'talla1X', $event)">{{person.talla2X}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'talla2X', $event)" (blur)="updateList(id, 'talla2X', $event)">{{person.talla2X}}</span>
+                </td>
+                <td>
+                <span class="table-remove">
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+                </span>
+                </td>
+            </tr>
+            </table>
+
+            <button mat-raised-button color="primary" (click)="agregar()">Agregar Detalle</button>
+        </div>
+        </div>
+    </div>
+
 <!--
     <mat-form-field>
         <input matInput placeholder="Diagnostico" [(ngModel)]="diagnostico">
@@ -75,60 +134,4 @@
 -->
 </div>
 
-<!-- Editable table -->
-<div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
-    <div class="card-body">
-    
-      <div id="table" class="table-editable">
-        <span class="table-add float-right mb-3 mr-2">
-          <a class="text-success" (click)="add()">
-              <button>agregar</button>
-           <!-- <mdb-icon fas icon="plus" size="2x"></mdb-icon>-->
-          </a>
-        </span>
-        <table aria-disabled="true" style="width: 80%;">
-          <tr>
-            <th class="text-center">IdCorte</th>
-            <th class="text-center">tallaS</th>
-            <th class="text-center">tallaM</th>
-            <th class="text-center">tallaL</th>
-            <th class="text-center">tallaXS</th>
-            <th class="text-center">talla1X</th>
-            <th class="text-center">talla2X</th>
-          </tr>
-          <tr *ngFor="let person of personList; let id = index">
-            <td>
-              <span (keyup)="changeValue(id, 'corte', $event)" (blur)="updateList(id, 'corte', $event)" contenteditable="true">{{person.corte}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'tallaS', $event)" (blur)="updateList(id, 'tallaS', $event)">{{person.tallaS}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'tallaM', $event)" (blur)="updateList(id, 'tallaM', $event)">{{person.tallaM}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'tallaL', $event)" (blur)="updateList(id, 'tallaL', $event)">{{person.tallaL}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'tallaXS', $event)" (blur)="updateList(id, 'tallaXS', $event)">{{person.tallaXS}}</span>
-            </td>
-            <td>
-                <span contenteditable="true" (keyup)="changeValue(id, 'talla1X', $event)" (blur)="updateList(id, 'talla1X', $event)">{{person.talla2X}}</span>
-            </td>
-            <td>
-                <span contenteditable="true" (keyup)="changeValue(id, 'talla2X', $event)" (blur)="updateList(id, 'talla2X', $event)">{{person.talla2X}}</span>
-            </td>
-            <td>
-              <span class="table-remove">
-                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
-              </span>
-            </td>
-          </tr>
-        </table>
-
-        <button mat-raised-button color="primary" (click)="agregar()">Agregar Detalle</button>
-      </div>
-    </div>
-  </div>
   <!-- Editable table -->

@@ -1,0 +1,33 @@
+
+/*
+@media all and (min-width: 768px) {
+    tr  {
+      td {
+        vertical-align: middle !important;
+      }
+      span {
+        &:not([class]) {
+          padding: 1rem 1rem;
+        }
+      }
+    }
+  }
+
+*/
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container>* {
+    width: 100%;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+table,th, td{
+
+    border:1px solid black
+}

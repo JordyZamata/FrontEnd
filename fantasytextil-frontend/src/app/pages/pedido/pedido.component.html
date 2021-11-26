@@ -1,1 +1,134 @@
-<p>pedido works!</p>
+<mat-toolbar>Registro de Consulta</mat-toolbar>
+
+<div class="example-container">
+
+    <mat-form-field>
+        <mat-select placeholder="Selecciona cliente" [(value)]="idClienteSeleccionado">
+            <mat-option *ngFor="let c of (clientes$ | async)" [value]="c.idCliente">
+                {{ c.razonSocial }} {{ c.telefono }} 
+            </mat-option>
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Selecciona Tela" [(value)]="idTelaSeleccionado">
+            <mat-option *ngFor="let t of (tela$ | async)" [value]="t.idTela">
+                {{ t.color }} {{ t.estilo }} {{ t.peso }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Escoger una fecha dd/mm/yyyy" 
+            [(ngModel)]="fechaSeleccionada" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+    </mat-form-field>
+<!--
+    <mat-form-field>
+        <input matInput placeholder="Diagnostico" [(ngModel)]="diagnostico">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput placeholder="Tratamiento" [(ngModel)]="tratamiento"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="agregar()">Agregar Detalle</button>
+
+    <mat-expansion-panel *ngFor="let d of detalleConsulta; let i=index">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ i + 1 }} {{d.diagnostico}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Ver Tratamiento
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+            <textarea matInput placeholder="Tratamiento" value="{{d.tratamiento}}"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="warn" (click)="removerDiagnostico(i)">Remover</button>
+    </mat-expansion-panel>
+
+    <mat-form-field>
+        <mat-select placeholder="Selecciona examen" [(value)]="idExamenSeleccionado">
+            <mat-option *ngFor="let e of (examenes$ | async)" [value]="e.idExamen">
+                {{ e.nombre }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="agregarExamen()">Agregar Examen</button>
+
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let ex of examenesSeleccionados; let i = index">
+            {{ex.idExamen}} {{ex.nombre}}
+            <button mat-raised-button color="warn">Remover</button>
+        </mat-list-item>
+    </mat-list>
+
+    <button mat-raised-button color="primary" (click)="aceptar()" [disabled]="estadoBotonRegistrar()">Registrar</button>
+-->
+</div>
+
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+    <div class="card-body">
+    
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <a class="text-success" (click)="add()">
+              <button>agregar</button>
+           <!-- <mdb-icon fas icon="plus" size="2x"></mdb-icon>-->
+          </a>
+        </span>
+        <table aria-disabled="true" style="width: 80%;">
+          <tr>
+            <th class="text-center">IdCorte</th>
+            <th class="text-center">tallaS</th>
+            <th class="text-center">tallaM</th>
+            <th class="text-center">tallaL</th>
+            <th class="text-center">tallaXS</th>
+            <th class="text-center">talla1X</th>
+            <th class="text-center">talla2X</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'corte', $event)" (blur)="updateList(id, 'corte', $event)" contenteditable="true">{{person.corte}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'tallaS', $event)" (blur)="updateList(id, 'tallaS', $event)">{{person.tallaS}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'tallaM', $event)" (blur)="updateList(id, 'tallaM', $event)">{{person.tallaM}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'tallaL', $event)" (blur)="updateList(id, 'tallaL', $event)">{{person.tallaL}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'tallaXS', $event)" (blur)="updateList(id, 'tallaXS', $event)">{{person.tallaXS}}</span>
+            </td>
+            <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'talla1X', $event)" (blur)="updateList(id, 'talla1X', $event)">{{person.talla2X}}</span>
+            </td>
+            <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'talla2X', $event)" (blur)="updateList(id, 'talla2X', $event)">{{person.talla2X}}</span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+
+        <button mat-raised-button color="primary" (click)="agregar()">Agregar Detalle</button>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->

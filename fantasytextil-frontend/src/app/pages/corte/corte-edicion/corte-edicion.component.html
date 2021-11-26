@@ -1,1 +1,27 @@
-<p>corte-edicion works!</p>
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #espForm="ngForm">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Estilo Corte" required formControlName="estilo">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Tipo Corte" required formControlName="tipo">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="espForm.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/corte' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>
+
+<br />

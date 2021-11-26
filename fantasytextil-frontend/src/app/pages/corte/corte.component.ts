@@ -16,7 +16,7 @@ import { CorteService } from 'src/app/_service/corte.service';
 export class CorteComponent implements OnInit {
 
 
-  displayedColumns = ['id', 'estilo', 'tipo'];
+  displayedColumns = ['id', 'estilo', 'tipo', 'acciones'];
   dataSource!: MatTableDataSource<Corte>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

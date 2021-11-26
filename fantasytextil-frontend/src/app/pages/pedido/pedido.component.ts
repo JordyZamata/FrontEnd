@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
@@ -74,18 +75,18 @@ export class PedidoComponent implements OnInit {
   editField!: string;
 
     personList: Array<any> = [
-      { id: 1, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXL: '', tallaXS: '', talla1X: '',
+      { id: 1, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXS: '', tallaXL: '', talla1X: '',
        talla2X: '',talla4X: '', totalCorte: '', ratioS: '', ratioM: '', ratioL: '', ratioXS: '',
-      ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '', city: '',
-      proporcion: ' ',ancho: 0,paños: 0,lagor_paño: 0,peso_paño: 0,totalKG: 0}
+      ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '',
+      proporcion: ' ',ancho: 0,panos: 0,largo_pano: 0,peso_pano: 0,totalKG: 0}
     ];
 
 
     awaitingPersonList: Array<any> = [
-      { id: 1, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXL: '', tallaXS: '', talla1X: '',
+      { id: 1, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXS: '', tallaXL: '', talla1X: '',
        talla2X: '',talla4X: '', totalCorte: '', ratioS: '', ratioM: '', ratioL: '', ratioXS: '',
-      ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '', city: '',
-      proporcion: ' ',ancho: 0,paños: 0,lagor_paño: 0,peso_paño: 0,totalKG: 0}
+      ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '',
+      proporcion: ' ',ancho: 0,panos: 0,largo_pano: 0,peso_pano: 0,totalKG: 0}
     ];
     
 
@@ -109,10 +110,10 @@ export class PedidoComponent implements OnInit {
         
         this.contador +=1;
 
-        this.personList.push( { id: this.contador, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXL: '', tallaXS: '', talla1X: '',
+        this.personList.push({ id: this.contador, corte: 0,tallaS: "", tallaM: '', tallaL: "", tallaXS: '', tallaXL: '', talla1X: '',
         talla2X: '',talla4X: '', totalCorte: '', ratioS: '', ratioM: '', ratioL: '', ratioXS: '',
-       ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '', city: '',
-       proporcion: ' ',ancho: 0,paños: 0,lagor_paño: 0,peso_paño: 0,totalKG: 0});
+       ratioXL: '', ratio1X: '', ratio2X: '', ratio3X: '', partida: '',
+       proporcion: ' ',ancho: 0,panos: 0,lago_pano: 0,peso_pano: 0,totalKG: 0});
         
         //this.awaitingPersonList.splice(0, 1);
       }

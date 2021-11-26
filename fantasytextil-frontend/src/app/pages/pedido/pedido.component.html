@@ -43,13 +43,33 @@
             </span>
             <table aria-disabled="true" style="width: 80%;">
             <tr>
-                <th class="text-center">IdCorte</th>
-                <th class="text-center">tallaS</th>
-                <th class="text-center">tallaM</th>
-                <th class="text-center">tallaL</th>
-                <th class="text-center">tallaXS</th>
-                <th class="text-center">talla1X</th>
-                <th class="text-center">talla2X</th>
+                <th class="text-center">Corte</th>
+                <th class="text-center">TS</th>
+                <th class="text-center">TM</th>
+                <th class="text-center">TL</th>
+                <th class="text-center">TXS</th>
+                <th class="text-center">TXL</th>
+                <th class="text-center">T1X</th>
+                <th class="text-center">T2X</th>
+                <th class="text-center">T4X</th>
+                <th class="text-center">Total Corte</th>
+                <th class="text-center">RS</th>
+                <th class="text-center">RM</th>
+                <th class="text-center">RL</th>
+                <th class="text-center">RXS</th>
+                <th class="text-center">RXL</th>
+                <th class="text-center">R1X</th>
+                <th class="text-center">R2X</th>
+                <th class="text-center">R3X</th>
+                <th class="text-center">Partida</th>
+                <th class="text-center">Proporción</th>
+                <th class="text-center">Ancho</th>
+                <th class="text-center">Paños</th>
+                <th class="text-center">Largo Paño</th>
+                <th class="text-center">Peso Paño</th>
+                <th class="text-center">Total KG</th>
+
+            
             </tr>
             <tr *ngFor="let person of personList; let id = index">
                 <td>
@@ -68,11 +88,65 @@
                 <span contenteditable="true" (keyup)="changeValue(id, 'tallaXS', $event)" (blur)="updateList(id, 'tallaXS', $event)">{{person.tallaXS}}</span>
                 </td>
                 <td>
-                    <span contenteditable="true" (keyup)="changeValue(id, 'talla1X', $event)" (blur)="updateList(id, 'talla1X', $event)">{{person.talla2X}}</span>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'tallaXL', $event)" (blur)="updateList(id, 'tallaXL', $event)">{{person.tallaXL}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'talla1X', $event)" (blur)="updateList(id, 'talla1X', $event)">{{person.talla1X}}</span>
                 </td>
                 <td>
                     <span contenteditable="true" (keyup)="changeValue(id, 'talla2X', $event)" (blur)="updateList(id, 'talla2X', $event)">{{person.talla2X}}</span>
                 </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'talla4X', $event)" (blur)="updateList(id, 'talla4X', $event)">{{person.talla4X}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'totalCorte', $event)" (blur)="updateList(id, 'totalCorte', $event)">{{person.totalCorte}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratioS', $event)" (blur)="updateList(id, 'ratioS', $event)">{{person.ratioS}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratioM', $event)" (blur)="updateList(id, 'ratioM', $event)">{{person.ratioM}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratioL', $event)" (blur)="updateList(id, 'ratioL', $event)">{{person.ratioL}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratioXS', $event)" (blur)="updateList(id, 'ratioXS', $event)">{{person.ratioXS}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratioXL', $event)" (blur)="updateList(id, 'ratioXL', $event)">{{person.ratioXL}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratio1X', $event)" (blur)="updateList(id, 'ratio1X', $event)">{{person.ratio1X}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratio2X', $event)" (blur)="updateList(id, 'ratio2X', $event)">{{person.ratio2X}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ratio3X', $event)" (blur)="updateList(id, 'ratio3X', $event)">{{person.ratio3X}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'partida', $event)" (blur)="updateList(id, 'partida', $event)">{{person.partida}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'proporcion', $event)" (blur)="updateList(id, 'proporcion', $event)">{{person.proporcion}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'ancho', $event)" (blur)="updateList(id, 'ancho', $event)">{{person.ancho}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'panos', $event)" (blur)="updateList(id, 'panos', $event)">{{person.panos}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'largo_pano', $event)" (blur)="updateList(id, 'largor_pano', $event)">{{person.largo_pano}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'peso_pano', $event)" (blur)="updateList(id, 'peso_pano', $event)">{{person.peso_pano}}</span>
+                </td>
+                <td>
+                    <span contenteditable="true" (keyup)="changeValue(id, 'totalKG', $event)" (blur)="updateList(id, 'totalKG', $event)">{{person.totalKG}}</span>
+                </td> 
                 <td>
                 <span class="table-remove">
                     <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>

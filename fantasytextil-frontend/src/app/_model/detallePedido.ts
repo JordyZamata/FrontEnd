@@ -23,9 +23,9 @@ export class DetallePedido {
     partida!: string;
     proporcion!: string;
     ancho!: number;
-    paños!: number;
-    lagor_paño!: number;
-    peso_paño!: number;
+    panos!: number;
+    largo_pano!: number;
+    peso_pano!: number;
     totalKG!: number
 
 }

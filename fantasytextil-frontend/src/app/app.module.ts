@@ -15,6 +15,7 @@ import { TelaComponent } from './pages/tela/tela.component';
 import { TelaEdicionComponent } from './pages/tela/tela-edicion/tela-edicion.component';
 import { CorteComponent } from './pages/corte/corte.component';
 import { CorteEdicionComponent } from './pages/corte/corte-edicion/corte-edicion.component';
+import { PedidoComponent } from './pages/pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CorteEdicionComponent } from './pages/corte/corte-edicion/corte-edicion
     TelaComponent,
     TelaEdicionComponent,
     CorteComponent,
-    CorteEdicionComponent
+    CorteEdicionComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,

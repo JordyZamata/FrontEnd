@@ -7,6 +7,7 @@ import { TelaComponent } from './pages/tela/tela.component';
 import { TelaEdicionComponent } from './pages/tela/tela-edicion/tela-edicion.component';
 import { CorteComponent } from './pages/corte/corte.component';
 import { CorteEdicionComponent } from './pages/corte/corte-edicion/corte-edicion.component';
+import { PedidoComponent } from './pages/pedido/pedido.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'edicion/:id', component: CorteEdicionComponent }
     ]
   },
-  { path: 'cortador', component: CortadorComponent }
+  { path: 'cortador', component: CortadorComponent },
+  { path: 'pedido', component: PedidoComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

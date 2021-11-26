@@ -10,9 +10,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorImpl } from './mat-paginator';
 
 
 @NgModule({
@@ -34,6 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule
+  ],
+  providers: [
+    { provide: MatPaginatorIntl, useClass: MatPaginatorImpl }
   ]
 })
 export class MaterialModule { }
